@@ -73,6 +73,9 @@ class DatetimeType extends AbstractType
             $pickerOptions['format'] = DatetimeType::convertIntlFormaterToMalot( $pickerOptions['format'] );
         }
 
+        unset($pickerOptions['formatter']);
+        unset($pickerOptions['language']);
+
         $view->vars = array_replace($view->vars, array(
             'pickerOptions' => $pickerOptions,
         ));
